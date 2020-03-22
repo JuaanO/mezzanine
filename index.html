@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Mezzanine Café Teatro</title>
+
+    <!-- 
+
+Sentra Template
+
+http://www.templatemo.com/tm-518-sentra
+
+-->
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/fontAwesome.css">
+    <link rel="stylesheet" href="css/light-box.css">
+    <link rel="stylesheet" href="css/owl-carousel.css">
+    <link rel="stylesheet" href="css/templatemo-style.css">
+
+    <script src="alertas/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="alertas/sweetalert.css">
+    <script src="angular-1.4.6/angular.js"></script>
+    <script src="js/myApp.js"></script>
+    <script>
+        function soloLetras(e) {
+            key = e.keyCode || e.which;
+            tecla = String.fromCharCode(key).toLowerCase();
+            letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+            especiales = "8-37-39-46";
+
+            tecla_especial = false
+            for (var i in especiales) {
+                if (key == especiales[i]) {
+                    tecla_especial = true;
+                    break;
+                }
+            }
+
+            if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+                return false;
+            }
+        }
+    </script>
+
+    <script type="text/javascript">
+        function mayus(e) {
+            e.value = e.value.toUpperCase();
+        }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="mezzanineController">
+
+
+
+    <header class="nav-down responsive-nav hidden-lg hidden-md">
+        <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        <!--/.navbar-header-->
+        <div id="main-nav" class="collapse navbar-collapse">
+            <nav>
+                <ul class="nav navbar-nav">
+                    <li><a href="#Inicio">Inicio</a></li>
+                    <li><a href="#video">Presentacion</a></li>
+                    <li><a href="#featured">Obras</a></li>
+                    <li><a href="#projects">Galeria</a></li>
+                    <li><a href="#blog">Programacion</a></li>
+                    <li><a href="#contact">Contactanos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="sidebar-navigation hidde-sm hidden-xs">
+        <div class="logo">
+            <a href="#"><img src="img/LogoW.png" width="85%" href="index.html"></a>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#Inicio">
+                        <span class="rect"></span>
+                        <span class="circle"></span> Inicio
+                    </a>
+                </li>
+                <li>
+                    <a href="#video">
+                        <span class="rect"></span>
+                        <span class="circle"></span> Presentation
+                    </a>
+                </li>
+                <li>
+                    <a href="#blog">
+                        <span class="rect"></span>
+                        <span class="circle"></span> Programacion
+                    </a>
+                </li>
+                <li>
+                    <a href="#featured">
+                        <span class="rect"></span>
+                        <span class="circle"></span> Obras
+                    </a>
+                </li>
+                <li>
+                    <a href="#projects">
+                        <span class="rect"></span>
+                        <span class="circle"></span> Galeria
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact">
+                        <span class="rect"></span>
+                        <span class="circle"></span> Contactanos
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <ul class="social-icons">
+            <li><a href="https://www.facebook.com/Mezzanine-Caf%C3%A9-Teatro-1976442979345458" target="_blank"><i class="fa fa-facebook" ></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://www.instagram.com/mezzaninecafeteatro/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="#">0985521544 - 0991480127 </a></li>
+        </ul>
+    </div>
+
+    <div class="slider" ;>
+        <div class="Modern-Slider content-section" id="Inicio">
+            <!-- Item -->
+            <div class="item item-1">
+                <div class="img-fill">
+                    <div class="image"></div>
+                    <!-- <div class="info">
+                        <div>
+                          <h1>Beautiful Template<br>Sentra</h1>
+                          <p>This is a HTML CSS template provided by 
+                          			<a href="https://plus.google.com/+templatemo" target="_blank">templatemo</a> website.<br>
+                          			Please tell your friends about our site.</p>
+                          <div class="white-button button">
+                              <a href="#featured">Discover More</a>
+                          </div>
+                        </div>
+                        </div>-->
+                </div>
+            </div>
+            <!-- // Item -->
+            <!-- Item -->
+            <div class="item item-2">
+                <div class="img-fill">
+                    <div class="image"></div>
+                    <!--<div class="info">
+                        <div>
+                          <h1>Lorem ipsum <br>dolor</h1>
+                          <p>Phasellus luctus odio eget dui imperdiet, at pulvinar ante convallis.
+							<br>Proin sit amet fringilla erat.</p>
+                          
+                          <div class="white-button button">
+                              <a href="#featured">Discover More</a>
+                          </div>
+                        </div>
+                        </div>-->
+                </div>
+            </div>
+            <!-- // Item -->
+            <!-- Item -->
+            <div class="item item-3">
+                <div class="img-fill">
+                    <div class="image"></div>
+                    <!--  <div class="info">
+                        <div>
+                          <h1>Suspendisse suscipit<br>nulla sed</h1>
+                          <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices <br>posuere cubilia Curae; Sed at massa turpis.</p>
+                          
+                          <div class="white-button button">
+                              <a href="#featured">Discover More</a>
+                          </div>
+                        </div>
+                        </div>-->
+                </div>
+            </div>
+            <!-- // Item -->
+        </div>
+    </div>
+
+    <div class="page-content">
+
+
+
+
+
+        <section id="video" class="content-section">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h1>¿Quienes somos <em>Mezzanine</em> ?</h1>
+
+                    </div>
+                    <div class="text-content" ALIGN="justify">
+                        <div class="row">
+
+                            <p> Mezzanine Teatro es una empresa que inició su camino desde el 2015, contruyendo su sala de teatro independiente en Santo Domingo de los Tsáchilas, logrado consolidar una escena para el teatro en la Provincia.</p>
+                            <p>Ha producido 5 obras de larga duración, de las cuales, dos recibieron reconocimiento a nivel nacional: (”La Espera” 2015 y “Los Otros” 2019); y otras dos fueron seleccionadas en circuitos profesionales (Horizonte 2018 y Abismo
+                                Azul 2019).</p>
+                            <p>También ha producido 4 obras de formato corto o micro obras, con las que se estrenó la sala de micro teatro en febrero de 2018.</p>
+                            <p> Ha recibido alrededor de 12 producciones a nivel Nacional,con los actores y grupos de mayor trayectoria del Ecuador, en televisión, cine y principalmente en el teatro, quienes ya ven a Santo Domingo como una plaza más para
+                                mostrarse, con un público cautivo y espacios idóneos para el quehacer artístico.</p>
+                            <p>Mezzanine Teatro actualmente se encuentra en una fase de crecimiento, en la cual el mayor propósito es invertir en el crecimiento y formación del talento local, brindando la oportunidad de que nuestros artistas puedan también
+                                ser autores y directores de sus propios contenidos.</p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="section-content">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="item">
+                            <div class="section-heading">
+                                <h4><em>Objetivos</em></h4>
+                            </div>
+                            <div class="text-content">
+                                <p>Para la consecución de nuestros objetivos, Mezzanine ha creado un proyecto llamado Mezzanine Kids, el cual desde el 2019 se proyecta como un espacio netamente dedicado a los más pequeños, para formar y guiar a los niños
+                                    y niñas que desde temprana edad gustan del arte.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="item">
+                            <div class="section-heading">
+                                <h4><em>Misiòn</em></h4>
+                            </div>
+                            <div class="text-content">
+                                <p>Mezzanine Teatro es más que una empresa dedicada a la generación de propuestas artísticas para la ciudad, ya que dentro de sus fines y objetivos, Mezzanine tiene la misión de coadyuvar en el desarrollo del arte en la sociedad,
+                                    promoviendo una cultura integrativa que fomente la participación de todos los sectores sociales dentro del marco del quehacer artístico.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="item">
+                            <div class="section-heading">
+                                <h4><em>Vision</em></h4>
+                            </div>
+                            <div class="text-content">
+                                <p>Nuestra visión a mediano plazo, es convertirnos en una gran organización que cuente con una plataforma e infrestructura que le permita a los artistas y gestores culturales de la localidad el desarrollo de propuestas artísticas
+                                    de todo tipo, abaratando costos de producción en un espacio adecuado que cumpla con las exigencias artísticas que se requieran.</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box-video">
+                        <div class="bg-video" style="background-image: url(img/FondoVideo.png);">
+                            <div class="bt-play">Play</div>
+                        </div>
+                        <div class="video-container">
+                            <iframe width="100%" height="520" src="https://www.youtube.com/embed/92jki-eO5Cc?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="content-section">
+            <div class="section-heading">
+                <h1><em>Programacion</em></h1>
+                <p>Conoce nuestra programación para todo el año 2020 y sé parte de nuestro sueño.
+                </p>
+            </div>
+            <div class="section-content">
+                <div class="tabs-content">
+                    <div class="wrapper">
+                        <ul class="tabs clearfix" data-tabgroup="first-tab-group">
+                            <li><a href="#tab1" class="active">Febrero</a></li>
+                            <li><a href="#tab2">Marzo</a></li>
+                            <li><a href="#tab3">Abril</a></li>
+                            <li><a href="#tab4">Mayo</a></li>
+
+                        </ul>
+                        <section id="first-tab-group" class="tabgroup">
+                            <div id="tab1">
+                                <ul>
+                                    <li>
+                                        <div class="item">
+                                            <img src="img/evento1.jpg" alt="" width="40%">
+
+                                            <div class="text-content">
+                                                <h4>“Déjate de vainas cabo Mosquito” </h4>
+                                                <span>19 de Febrero de 2020</span>
+                                                <p>Descripcion de la obra.</p>
+
+                                                <!-- <div class="accent-button button">
+                                                        <a href="#contact">Continue Reading</a>
+                                                    </div>-->
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="tab2">
+                                <ul>
+                                    <li>
+                                        <div class="item">
+                                            <img src="img/eventocantina.jpg" alt="" width="40%">
+
+                                            <div class="text-content">
+                                                <h4>“La Cantina Italiana”</h4>
+                                                <span>marzo de 2020</span>
+                                                <p>Obra disponible para el 4, 5, 6, 7, 13, 14 y 15 de marzo.</p>
+
+                                                <!-- <div class="accent-button button">
+                                                        <a href="#contact">Continue Reading</a>
+                                                    </div>-->
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item">
+                                            <img src="img/evento2.jpg" alt="" width="40%">
+
+                                            <div class="text-content">
+                                                <h4>“Hoja Vacía”</h4>
+                                                <span>marzo de 2020</span>
+                                                <p>Obra disponible para el 4, 5, 6, 7, 13, 14 y 15 de marzo.</p>
+
+                                                <!-- <div class="accent-button button">
+                                                        <a href="#contact">Continue Reading</a>
+                                                    </div>-->
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item">
+                                            <img src="img/imagen_no_disponible.png" alt="" width="40%">
+
+                                            <div class="text-content">
+                                                <h4>“Cuál es el dilema Shakes”</h4>
+                                                <span>marzo de 2020</span>
+                                                <p>Obra disponible para el 7 y 8 de marzo.</p>
+
+                                                <!-- <div class="accent-button button">
+                                                        <a href="#contact">Continue Reading</a>
+                                                    </div>-->
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item">
+                                            <img src="img/imagen_no_disponible.png" alt="" width="40%">
+
+                                            <div class="text-content">
+                                                <h4>“Taller de manejo de títeres y objetos”</h4>
+                                                <span>marzo de 2020</span>
+                                                <p>Obra disponible para el 7 y 8 de marzo.</p>
+
+                                                <!-- <div class="accent-button button">
+                                                        <a href="#contact">Continue Reading</a>
+                                                    </div>-->
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item">
+                                            <img src="img/imagen_no_disponible.png" alt="" width="40%">
+
+                                            <div class="text-content">
+                                                <h4>“Feria de la familia Mezzanine Kids”</h4>
+                                                <span>marzo de 2020</span>
+                                                <p>Obra disponible para el 7 y 8 de marzo.</p>
+
+                                                <!-- <div class="accent-button button">
+                                                        <a href="#contact">Continue Reading</a>
+                                                    </div>-->
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="tab3">
+                                <ul>
+
+
+                                </ul>
+                            </div>
+                            <div id="tab4">
+                                <ul>
+
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section id="featured" class="content-section">
+            <div class="section-heading">
+                <h1><em>Obras</em> <br>Realizadas</h1>
+                <p>Conoce que se realizaron en mezzanine <br></p>
+            </div>
+            <div class="section-content">
+                <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <div class="image">
+                            <img src="img/imagen_no_disponible.png" alt="">
+                            <div class="featured-button button">
+                                <a href="#projects">Leer mas</a>
+                            </div>
+                        </div>
+                        <div class="text-content">
+                            <h4>“La Espera”</h4>
+                            <p>Obra ganadora del premio Creación artística a nivel Nacional en el 2015, Ministerio de cultura.</p>
+                            <p>En el Ecuador post alfarista, en plena época del boom cacaotero, se desarrollan historias perdidas en el tiempo y el espacio. De pronto la moda y la cultura europea, especialmente parisina, ha tocado en lo más profundo a un
+                                pequeño lugar de la costa.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="image">
+                            <img src="img/imagen_no_disponible.png" alt="">
+                            <div class="featured-button button">
+                                <a href="#projects">Leer mas</a>
+                            </div>
+                        </div>
+                        <div class="text-content">
+                            <h4>“Ágape”</h4>
+
+                            <p>Las hermanas Monteros Vera salieron de Pile – Manabí hacia la capital, huyendo de una historia que se repite, madres solteras que enfrentan solas su destino, en medio de una sociedad machista que las aplaca. En la época del
+                                “taurazo”, la menor de ellas se ve decidida a cambiar esa realidad.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="image">
+                            <img src="img/imagen_no_disponible.png" alt="">
+                            <div class="featured-button button">
+                                <a href="#projects">Leer mas</a>
+                            </div>
+                        </div>
+                        <div class="text-content">
+                            <h4>“Abismo azul”</h4>
+                            <!--<span>Vulputate</span>-->
+                            <p>Es un drama en 3 actos que visibiliza el viaje del cáncer en nosotros. Los que lo padecen, quienes están alrededor, quienes le temen, los que lo enfrentan; y los que se acostumbran a vivir con él. Hay dos caminos para afrontar
+                                este viaje. El de la cotidianidad que se desgasta sin piedad y el de la ilusión y fantasía, donde no existe el tiempo, ni los finales, solo el infinito
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="image">
+                            <img src="img/imagen_no_disponible.png" alt="">
+                            <div class="featured-button button">
+                                <a href="#projects">Leer mas</a>
+                            </div>
+                        </div>
+                        <div class="text-content">
+                            <h4>“Horizonte”</h4>
+                            <!--<span>Elementum</span>-->
+                            <p>Miguel y Rosario son dos personajes desconocidos entre sí pero los une el mismo motivo, ambos perdieron a sus únicos hijos en el terremoto del 16 de abril de 2016. Una nueva oportunidad se esconde entre su tragedia. </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="image">
+                            <img src="img/imagen_no_disponible.png" alt="">
+                            <div class="featured-button button">
+                                <a href="#projects">Leer mas</a>
+                            </div>
+                        </div>
+                        <div class="text-content">
+                            <h4>“A bordo”</h4>
+                            <!--<span>Elementum</span>-->
+                            <p>Estefanía y Soledad son dos hermanas que se vuelven a encontrar después de cinco años y comparten un vuelo de regreso a casa con varias escalas y motivaciones distintas</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="image">
+                            <img src="img/imagen_no_disponible.png" alt="">
+                            <div class="featured-button button">
+                                <a href="#projects">Leer mas</a>
+                            </div>
+                        </div>
+                        <div class="text-content">
+                            <h4>“Hoja vacia”</h4>
+                            <!--<span>Elementum</span>-->
+                            <p>Fernando y Fernanda, dos personas totalmente diferentes, ella del primer mundo y él, con sus limitantes y falta de experiencia, una entrevista de trabajo en un lugar poco convencional hace que las cosas se salgan un poco de
+                                control para reflexión de ambos</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="image">
+                            <img src="img/imagen_no_disponible.png" alt="">
+                            <div class="featured-button button">
+                                <a href="#projects">Leer mas</a>
+                            </div>
+                        </div>
+                        <div class="text-content">
+                            <h4>“La cantina italiana”</h4>
+                            <!--<span>Elementum</span>-->
+                            <p>Giuseppe, Laura y Antonio, son tres personas que aterrizan sus problemas en una cantina. Problemas de identidad, psicológico y adicciones en exceso marcan el ritmo de esta comedia. Un errado plan en manos de un ciego, con la
+                                complicidad del dueño de la cantina hace que las cosas se salgan de control. Laura, la víctima descubre nuevos afectos en un final inesperado</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="image">
+                            <img src="img/imagen_no_disponible.png" alt="">
+                            <div class="featured-button button">
+                                <a href="#projects">Leer mas</a>
+                            </div>
+                        </div>
+                        <div class="text-content">
+                            <h4>“Los Otros”</h4>
+                            <!--<span>Elementum</span>-->
+                            <p>Obra ganadora del programa Nacional Camino a Loja 2019. Cuenta la historia de dos familias migrantes distintas, que encontraron en un solo lugar su destino; una interminable guerra de prejuicios y diferencias para amar la tierra
+                                y amarse entre sí. En la década del 50 del siglo anterior, época de sequía en el Ecuador, el pueblo de Santo Domingo de los Colorados, era una nueva oportunidad para todos para adueñarse de la tierra y tener un futuro.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section id="projects" class="content-section">
+            <div class="section-heading">
+                <h1>Galeria<br><em>Mezzanine</em></h1>
+                <p>Praesent pellentesque efficitur magna,
+                    <br>sed pellentesque neque malesuada vitae.</p>
+            </div>
+            <div class="section-content">
+                <div class="masonry">
+                    <div class="row">
+                        <div class="item">
+                            <div class="col-md-8">
+                                <a href="img/EVENTOS/fun1.jpg" data-lightbox="image"><img src="img/EVENTOS/fun1.jpg" alt="image 1" width="30%"></a>
+                            </div>
+                        </div>
+                        <div class="item second-item">
+                            <div class="col-md-4">
+                                <a href="img/EVENTOS/fun2.jpg" data-lightbox="image"><img src="img/EVENTOS/fun2.jpg" alt="image 2"></a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-md-4">
+                                <a href="img/EVENTOS/fun3.jpg" data-lightbox="image"><img src="img/EVENTOS/fun3.jpg" alt="image 3"></a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-md-4">
+                                <a href="img/EVENTOS/fun4.jpg" data-lightbox="image"><img src="img/EVENTOS/fun4.jpg" alt="image 4"></a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-md-4">
+                                <a href="img/EVENTOS/fun5.jpg" data-lightbox="image"><img src="img/EVENTOS/fun5.jpg" alt="image 4"></a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-md-4">
+                                <a href="img/EVENTOS/fun13.jpg" data-lightbox="image"><img src="img/EVENTOS/fun14.jpg" alt="image 4"></a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-md-8">
+                                <a href="img/EVENTOS/fun7.jpg" data-lightbox="image"><img src="img/EVENTOS/fun7.jpg" alt="image 5"></a>
+                            </div>
+                        </div>
+                        <div class="item second-item">
+                            <div class="col-md-4">
+                                <a href="img/EVENTOS/fun8.jpg" data-lightbox="image"><img src="img/EVENTOS/fun8.jpg" alt="image 2"></a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-md-4">
+                                <a href="img/EVENTOS/fun9.jpg" data-lightbox="image"><img src="img/EVENTOS/fun9.jpg" alt="image 3"></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section">
+            <div id="map">
+
+                <!-- How to change your own map point
+                           1. Go to Google Maps
+                           2. Click on your location point
+                           3. Click "Share" and choose "Embed map" tab
+                           4. Copy only URL and paste it within the src="" field below
+                    -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.8892482284323!2d-79.16016007563417!3d-0.2559960421812071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d546549522e253%3A0x2e204b315846ae5b!2sAvenida%20la%20Lorena%20%26%20Calle%20Sim%C3%B3n%20Bolivar%2C%20Santo%20Domingo!5e0!3m2!1ses!2sec!4v1584287864032!5m2!1ses!2sec"
+                    width="100%" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+            </div>
+            <div id="contact-content">
+                <div class="section-heading">
+                    <h1><em>Contactanos</em></h1>
+                    <p>Responderemos tus solicutdes
+                    </p>
+
+                </div>
+                <div class="section-content">
+                    <form id="contact">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <fieldset>
+                                    <input name="name" type="text" class="form-control" id="name" placeholder="Tu nombre..." required="" ng-model="nombre">
+                                </fieldset>
+                            </div>
+                            <div class="col-md-4">
+                                <fieldset>
+                                    <input name="email" type="email" class="form-control" id="email" placeholder="Tu email..." required="" ng-model="correo">
+                                </fieldset>
+                            </div>
+                            <div class="col-md-4">
+                                <fieldset>
+                                    <input name="subject" type="text" class="form-control" id="subject" placeholder="Asunto..." required="" ng-model="asunto">
+                                </fieldset>
+                            </div>
+                            <div class="col-md-12">
+                                <fieldset>
+                                    <textarea name="message" rows="6" class="form-control" id="message" placeholder="Tu mensaje..." required="" ng-model="mensaje"></textarea>
+                                </fieldset>
+                            </div>
+                            <div class="col-md-12">
+                                <fieldset>
+                                    <button type="button" onclick="this.form.reset();" class="btn" id="btnEnviar" ng-click="enviar_correo()">Enviar mensaje ahora</button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="footer">
+            <p>Copyright &copy; 2020. Design: <a href="http://mezzanineteatro.com/" target="_blank">Mezzanine Teatro</a></p>
+        </section>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
+    </script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // Hide Header on on scroll down
+        var didScroll;
+        var lastScrollTop = 0;
+        var delta = 5;
+        var navbarHeight = $('header').outerHeight();
+
+        $(window).scroll(function(event) {
+            didScroll = true;
+        });
+
+        setInterval(function() {
+            if (didScroll) {
+                hasScrolled();
+                didScroll = false;
+            }
+        }, 250);
+
+        function hasScrolled() {
+            var st = $(this).scrollTop();
+
+            // Make sure they scroll more than delta
+            if (Math.abs(lastScrollTop - st) <= delta)
+                return;
+
+            // If they scrolled down and are past the navbar, add class .nav-up.
+            // This is necessary so you never see what is "behind" the navbar.
+            if (st > lastScrollTop && st > navbarHeight) {
+                // Scroll Down
+                $('header').removeClass('nav-down').addClass('nav-up');
+            } else {
+                // Scroll Up
+                if (st + $(window).height() < $(document).height()) {
+                    $('header').removeClass('nav-up').addClass('nav-down');
+                }
+            }
+
+            lastScrollTop = st;
+        }
+    </script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+</body>
+
+</html>
